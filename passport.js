@@ -30,22 +30,26 @@ passport.deserializeUser(function(id, done){
 })
 }
 
-passport.use('logIn', new LocalStrategy(
-    function(username, password, done) {
-      User.findOne({ username: 'email' }, function(err, user) {
-        if (err) { return done(err); }
-        if (!user) {
-          return done(null, false, { message: 'Incorrect email.' });
-        }
-        if (!user.validPassword(password)) {
-          return done(null, false, { message: 'Incorrect password.' });
-        }
-        return done(null, user);
-      });
-    }
-  ));
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+      User.findOne({  // Using sequelize model function
+          where: { // Take an object with options where self explanatory
+              username: 'email'
+          }
+      }).then(function (user) { // Sequelize return a promise with user in callback
+          if (user == null) { // Checking if user exsists
+              return done(null, false)  // Standerd Passport callback
+          }
 
-  //*******Study this**********8
+          if (password == user.password) { // use your password hash comparing logic here for security
+              return done(null, user) // Standerd Passport callback
+          }
+          return done(null, false) // Standerd Passport callback
+      })
+  }
+))
+
+  //*******Study this**********
 //   app.post('/login', 
 //   passport.authenticate('local', { failureRedirect: '/login' }),
 //   function(req, res) {
