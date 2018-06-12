@@ -1,10 +1,11 @@
 //Use npm install passport-local
+//Use npm install passport
 
 var passport = require('passport')
 , LocalStrategy = require('passport-local').Strategy;
 
 //const User needed for deserializeUser
-const User = require('<relative path to User.js eg ./User>')
+//const User = require('<relative path to User.js eg ./User>')
 
 //Require SQL to write to db
 var mysql = require('mysql');
@@ -38,13 +39,13 @@ passport.use(new LocalStrategy(
           }
       }).then(function (user) { // Sequelize return a promise with user in callback
           if (user == null) { // Checking if user exsists
-              return done(null, false)  // Standerd Passport callback
+              return done(null, false)  // Standard Passport callback
           }
 
           if (password == user.password) { // use your password hash comparing logic here for security
-              return done(null, user) // Standerd Passport callback
+              return done(null, user) // Standard Passport callback
           }
-          return done(null, false) // Standerd Passport callback
+          return done(null, false) // Standard Passport callback
       })
   }
 ))
