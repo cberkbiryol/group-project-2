@@ -47,9 +47,11 @@
       </form>
     </div>
 
+    <!-- SECTION DIVIDER -->
+    <!-- *************** -->
     <div class="row">
         <div class="col"><hr></div>
-        <div class="col-auto"><h2>Open Jobs</h2></div>
+        <div class="col-auto"><h2>Available Jobs</h2></div>
         <div class="col"><hr></div>
     </div>
 
@@ -119,6 +121,8 @@
       </div>
     </div>
 
+    <!-- SECTION DIVIDER -->
+    <!-- *************** -->
     <div class="row">
         <div class="col"><hr></div>
         <div class="col-auto"><h2>Jobs In Progress</h2></div>
@@ -161,6 +165,8 @@
       </div>
     </div>
 
+    <!-- SECTION DIVIDER -->
+    <!-- *************** -->
     <div class="row">
         <div class="col"><hr></div>
         <div class="col-auto"><h2>Completed Jobs</h2></div>
@@ -214,21 +220,21 @@
           </button>
         </div>
         <div class="modal-body">
-            <form>
-                <div class="form-group">
-                  <label for="employeeName" class="col-form-label">Name</label> 
-                    <input id="employeeName" name="employeeName" placeholder="Your Name" type="text" required="required" class="form-control here">
-                </div>
-                <div class="form-group">
-                  <label for="employeeEmail" class="col-form-label">Email</label> 
-                    <input id="employeeEmail" name="employeeEmail" placeholder="Email" type="text" class="form-control here" required="required">
-                </div>
-                <div class="form-group">
-                  <label for="employeeSkills" class="col-form-label">Skills</label> 
-                    <textarea id="employeeSkills" name="employeeSkills" cols="40" rows="5" class="form-control" required="required" aria-describedby="employeeSkillsHelpBlock"></textarea> 
-                    <span id="employeeSkillsHelpBlock" class="form-text text-muted">Please briefly describe the skills that qualify you for this job.</span>
-                </div> 
-              </form>
+          <form>
+            <div class="form-group">
+              <label for="employeeName" class="col-form-label">Name</label> 
+              <input id="employeeName" name="employeeName" placeholder="Your Name" type="text" required="required" class="form-control here">
+            </div>
+            <div class="form-group">
+              <label for="employeeEmail" class="col-form-label">Email</label> 
+              <input id="employeeEmail" name="employeeEmail" placeholder="Email" type="text" class="form-control here" required="required">
+            </div>
+            <div class="form-group">
+              <label for="employeeSkills" class="col-form-label">Skills</label> 
+                <textarea id="employeeSkills" name="employeeSkills" cols="40" rows="5" class="form-control" required="required" aria-describedby="employeeSkillsHelpBlock"></textarea> 
+                <span id="employeeSkillsHelpBlock" class="form-text text-muted">Please briefly describe the skills that qualify you for this job.</span>
+            </div> 
+          </form>
         </div>
         <div class="modal-footer">
             <button name="submit" type="submit" class="btn btn-primary">Submit</button>
@@ -239,36 +245,36 @@
 
   <!-- COMPLETE JOB -->
   <div class="modal fade" id="completeModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Complete This Job</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <form>
-                  <div class="form-group">
-                    <label for="manager-email">Email address</label>
-                    <input type="email" class="form-control" id="managerEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                    <label for="manager-password">Password</label>
-                    <input type="password" class="form-control" id="managerPassword" placeholder="Password">
-                  </div>
-                  <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="completeJob">
-                    <label class="form-check-label" for="completeJob">Complete This Job</label>
-                  </div>
-                </form>
-          </div>
-          <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Complete This Job</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="manager-email">Email address</label>
+              <input type="email" class="form-control" id="managerEmail" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="manager-password">Password</label>
+              <input type="password" class="form-control" id="managerPassword" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="completeJob">
+              <label class="form-check-label" for="completeJob">Complete This Job</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
+  </div>
 
 
   </div>
