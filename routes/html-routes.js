@@ -3,10 +3,14 @@ var path = require("path");
 
 module.exports = function (app) {
     app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "./views/home.html"))
+        res.sendFile(path.join(__dirname, "../views/home.html"))
     });
 
     app.get("/postJob", function (req, res) {
-        res.sendFile(path.join(__dirname, "./views/post-job.html"))
+        res.sendFile(path.join(__dirname, "../views/post-job.html"))
+    });
+
+    app.get("/findJob", function (req, res) {
+        res.sendFile(path.join(__dirname, "../views/find-job.html"))
     });
 }
