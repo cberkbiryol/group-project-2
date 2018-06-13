@@ -17,8 +17,11 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="nav navbar-nav">
-      <a class="nav-item nav-link" href="./home.html">Find a Job</a>
-      <a class="nav-item nav-link" href="./post-job.html">Post a Job</a>
+      <a class="nav-item nav-link active" href="/">Home
+        <span class="sr-only">(current)</span>
+      </a>
+      <a class="nav-item nav-link" href="/findJob">Find a Job</a>
+      <a class="nav-item nav-link" href="/postJob">Post a Job</a>
     </div>
   </nav>
 
@@ -29,7 +32,7 @@
       <p class="lead">Find work, get work done.</p>
       <hr class="my-2">
 
-      <form>
+      <form class="postJob">
         <div class="form-group row">
           <label for="job-name" class="col-4 col-form-label">Job Name:</label>
           <div class="col-8">
@@ -41,11 +44,11 @@
           <div class="col-8">
             <select id="work-type" name="work-type" class="custom-select" required="required" size="1">
               <option value="">Select a Type of Work</option>
-              <option value="yard">Yard Work</option>
-              <option value="house">Household</option>
-              <option value="construction">Construction</option>
-              <option value="computer">Computer</option>
-              <option value="baby">Babysitting</option>
+              <option value="Yard Work">Yard Work</option>
+              <option value="Household">Household</option>
+              <option value="Construction">Construction</option>
+              <option value="Computer">Computer</option>
+              <option value="Babysitting">Babysitting</option>             
             </select>
           </div>
         </div>
@@ -63,12 +66,18 @@
           </div>
         </div>
         <div class="form-group row">
+          <label for="name" class="col-4 col-form-label">Name</label>
+          <div class="col-8">
+            <input id="name" name="name" placeholder="Name" type="text" class="form-control here" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
           <label for="email" class="col-4 col-form-label">Email Address</label>
           <div class="col-8">
             <input id="email" name="email" placeholder="Email" type="text" class="form-control here" required="required">
             <small class="form-text text-danger">Please remember the email and password you use, you will need it later to mark this job complete!</small>
           </div>
-        </div>
+        </div>        
         <div class="form-group row">
           <label for="password" class="col-4 col-form-label">Password</label>
           <div class="col-8">
@@ -87,12 +96,12 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
+  <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <script src="assets/js/post.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -11,7 +11,9 @@ app.use(bodyParser.json());
 
 app.use(express.static("public"));
 
-require("./routes/api-routes.js")(app);
+require("./routes/api-job-routes.js")(app);
+require("./routes/api-employer-routes.js")(app);
+require("./routes/api-employee-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
 // Start Server
