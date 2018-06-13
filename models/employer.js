@@ -21,16 +21,6 @@ module.exports = function(sequelize,DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
 
-        },
-        rating: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len:{
-                    args:[1,80],
-                    msg: "The email needs to be greater than 1 character but shorter than 80 characters long"            
-                }
-            }
         }
     });
     employer.associate = function(models){

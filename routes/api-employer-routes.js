@@ -42,22 +42,4 @@ module.exports = function (app) {
             res.json(err)
         });
     });
-    
-    app.put("/api/employer/:id", function (req, res) {
-        var newdata={
-            rating: req.body.rating
-        }
-        db.employer.update(newdata,{
-            where: {
-                id:req.params.id
-            }
-        }).then(function(data){
-            if (data.changedRows == 0) {
-                // If no rows were changed, then the ID must not exist, so 404
-                return res.status(404).end();
-              } else {
-                res.status(200).end();
-              }      
-        });
-    });
 }
