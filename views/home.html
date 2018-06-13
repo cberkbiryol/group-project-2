@@ -1,16 +1,10 @@
 <!doctype html>
 <html lang="en">
-  
-<head>
-  <title>Find Job</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../public/assets/css/style.css">
-</head>
+  <head>
+    <title>Find Job</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,8 +15,9 @@
     
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="nav navbar-nav">
-        <a class="nav-item nav-link active" href="/">Home<span class="sr-only">(current)</span></a>        
-        <a class="nav-item nav-link" href="/postJob">Post a Job</a>
+        <a class="nav-item nav-link active" href="./home.html">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="./find-job.html">Find a Job</a>
+        <a class="nav-item nav-link" href="./post-job.html">Post a Job</a>
       </div>
     </nav>
 
@@ -38,11 +33,11 @@
           <div class="col-8">
             <select id="work-type" name="work-type" class="custom-select" required="required">
               <option value=""></option>
-              <option value="Yard Work">Yard Work</option>
-              <option value="Household">Household</option>
-              <option value="Construction">Construction</option>
-              <option value="Computer">Computer</option>
-              <option value="Babysitting">Babysitting</option>
+              <option value="yard">Yard Work</option>
+              <option value="house">Household</option>
+              <option value="construction">Construction</option>
+              <option value="computer">Computer</option>
+              <option value="baby">Babysitting</option>
             </select>
           </div>
         </div> 
@@ -142,140 +137,73 @@
           <h4 class="card-title">Job Name</h4>
           <p class="card-text">Type of Work</p>
           <p class="card-text">Location:</p>
-          <p class="card-text">Description</p>
-          <button class="btn btn-success" data-toggle="modal" data-target="#acceptModal">Accept Job</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Job Name</h4>
-          <p class="card-text">Type of Work</p>
-          <p class="card-text">Location:</p>
-          <p class="card-text">Description</p>
-          <button class="btn btn-success" data-toggle="modal" data-target="#acceptModal">Accept Job</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Job Name</h4>
-          <p class="card-text">Type of Work</p>
-          <p class="card-text">Location:</p>
-          <p class="card-text">Description</p>
-          <button class="btn btn-success" data-toggle="modal" data-target="#acceptModal">Accept Job</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Job Name</h4>
-          <p class="card-text">Type of Work</p>
-          <p class="card-text">Location:</p>
-          <p class="card-text">Description</p>
-          <button class="btn btn-success" data-toggle="modal" data-target="#acceptModal">Accept Job</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Job Name</h4>
-          <p class="card-text">Type of Work</p>
-          <p class="card-text">Location:</p>
-          <p class="card-text">Description</p>
-          <button class="btn btn-success" data-toggle="modal" data-target="#acceptModal">Accept Job</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Job Name</h4>
-          <p class="card-text">Type of Work</p>
-          <p class="card-text">Location:</p>
-          <p class="card-text">Description</p>
-          <button class="btn btn-success" data-toggle="modal" data-target="#acceptModal">Accept Job</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION DIVIDER -->
-  <!-- *************** -->
-  <br>
-  <div class="row">
-      <div class="col"><hr></div>
-      <div class="col-auto"><h2>Jobs In Progress</h2></div>
-      <div class="col"><hr></div>
-  </div>
-
-  <!-- IN PROGRESS JOBS -->
-    <div class="card-columns" id="in-progress">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Job Name</h4>
-          <p class="card-text">Type of Work</p>
-          <p class="card-text">Location:</p>
-          <p class="card-text">Description</p>
+          <p class="card-text"><b>Description</b></p>
           <button class="btn btn-warning" data-toggle="modal" data-target="#completeModal">Mark Complete</button>
         </div>
       </div>
       <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="">
         <div class="card-body">
           <h4 class="card-title">Job Name</h4>
           <p class="card-text">Type of Work</p>
           <p class="card-text">Location:</p>
-          <p class="card-text">Description</p>
+          <p class="card-text"><b>Description</b></p>
           <button class="btn btn-warning" data-toggle="modal" data-target="#completeModal">Mark Complete</button>
         </div>
       </div>
       <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="">
         <div class="card-body">
           <h4 class="card-title">Job Name</h4>
           <p class="card-text">Type of Work</p>
           <p class="card-text">Location:</p>
-          <p class="card-text">Description</p>
+          <p class="card-text"><b>Description</b></p>
           <button class="btn btn-warning" data-toggle="modal" data-target="#completeModal">Mark Complete</button>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- SECTION DIVIDER -->
-  <!-- *************** -->
-  <br>
-  <div class="row">
-      <div class="col"><hr></div>
-      <div class="col-auto"><h2>Completed Jobs</h2></div>
-      <div class="col"><hr></div>
-  </div>
+    <!-- SECTION DIVIDER -->
+    <!-- *************** -->
+    <div class="row">
+        <div class="col"><hr></div>
+        <div class="col-auto"><h2>Completed Jobs</h2></div>
+        <div class="col"><hr></div>
+    </div>
 
     <!-- COMPLETED JOBS -->
-      <div class="card-columns" id="completed">
+      <div class="card-columns">
         <div class="card">
           <div class="card-header bg-dark text-white">Completed Jobs</div>
+          <img class="card-img-top" src="holder.js/100x180/" alt="">
           <div class="card-body">
             <h4 class="card-title">Job Name</h4>
             <p class="card-text">Type of Work</p>
             <p class="card-text">Location:</p>
-            <p class="card-text">Description</p>
+            <p class="card-text"><b>Description</b></p>
           </div>
         </div>
         <div class="card">
           <div class="card-header bg-dark text-white">Completed Jobs</div>
+          <img class="card-img-top" src="holder.js/100x180/" alt="">
           <div class="card-body">
             <h4 class="card-title">Job Name</h4>
             <p class="card-text">Type of Work</p>
             <p class="card-text">Location:</p>
-            <p class="card-text">Description</p>
+            <p class="card-text"><b>Description</b></p>
           </div>
         </div>
         <div class="card">
           <div class="card-header bg-dark text-white">Completed Jobs</div>
+          <img class="card-img-top" src="holder.js/100x180/" alt="">
           <div class="card-body">
             <h4 class="card-title">Job Name</h4>
             <p class="card-text">Type of Work</p>
             <p class="card-text">Location:</p>
-            <p class="card-text">Description</p>
+            <p class="card-text"><b>Description</b></p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
   <!-- ACCEPT JOB MODAL -->
   <div class="modal fade" id="acceptModal" tabindex="-1" role="dialog">
@@ -305,7 +233,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
@@ -335,31 +263,21 @@
               <input type="checkbox" class="form-check-input" id="completeJob">
               <label class="form-check-label" for="completeJob">Complete This Job</label>
             </div>
-            <select class="form-control" id="empRating">
-                <option value="">Add Rating</option>
-                <option value="1">1 (Unsatisfactory)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Great)</option>
-              </select>
-              <small class="form-text text-muted">Please leave a rating for job quality.</small>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
   </div>
 
   </div>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>
