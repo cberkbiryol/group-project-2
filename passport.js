@@ -9,6 +9,7 @@ var mysql = require('mysql');
 var express = require("express");
 var bodyParser = require("body-parser");
 var flash = require("flash");
+var flash = require('connect-flash');
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -29,7 +30,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 
-// expose this function to our app using module.exports
+//move this function to the app using module.exports
 //module.exports = function(passport) {
 //function passport() {
 
@@ -46,7 +47,7 @@ var PORT = process.env.PORT || 8080;
 
     // used to deserialize the user
     passport.deserializeUser(function(id, done) {
-		connection.query("SELECT * FROM employer WHERE id = "+id,function(err,rows){	
+		connection.query("SELECT * FROM 'employer' WHERE 'id' = "+id,function(err,rows){	
 			done(err, rows[0]);
 		});
     });
@@ -68,7 +69,7 @@ var PORT = process.env.PORT || 8080;
 
 		// find a user whose email is the same as the forms email
 		// we are checking to see if the user trying to login already exists
-        connection.query("SELECT * FROM employer WHERE email = '"+email+"'",function(err,rows){
+        connection.query("SELECT * FROM 'employer' WHERE 'email' = '"+email+"'",function(err,rows){
 			console.log(rows);
 			console.log("above row object");
 			if (err)
@@ -82,9 +83,9 @@ var PORT = process.env.PORT || 8080;
                 var newUserMysql = new Object();
 				
 				newUserMysql.email    = email;
-                newUserMysql.password = password; // use the generateHash function in our user model
+                newUserMysql.password = password;
 			
-				var insertQuery = "INSERT INTO employer ( email, password ) VALUES ('" + email +"','"+ password +"')";
+				var insertQuery = "INSERT INTO 'employer' ( email, password ) VALUES ('" + email +"','"+ password +"')";
 					console.log(insertQuery);
 				connection.query(insertQuery,function(err,rows){
 				newUserMysql.id = rows.insertId;
@@ -98,8 +99,6 @@ var PORT = process.env.PORT || 8080;
     // =========================================================================
     // LOCAL LOGIN =============================================================
     // =========================================================================
-    // we are using named strategies since we have one for login and one for signup
-    // by default, if there was no name, it would just be called 'local'
 
     passport.use('local-login', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
