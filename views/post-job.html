@@ -10,17 +10,14 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link href="../public/assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="nav navbar-nav">
-      <a class="nav-item nav-link active" href="/">Home
-        <span class="sr-only">(current)</span>
-      </a>
-      <a class="nav-item nav-link" href="/findJob">Find a Job</a>
+      <a class="nav-item nav-link active" href="/">Home<span class="sr-only">(current)</span></a>        
       <a class="nav-item nav-link" href="/postJob">Post a Job</a>
     </div>
   </nav>
@@ -62,7 +59,7 @@
           <label for="description" class="col-4 col-form-label">Description</label>
           <div class="col-8">
             <textarea id="description" name="description" cols="40" rows="5" class="form-control"
-              required="required">Enter a description of the work to be done...</textarea>
+              required="required"></textarea>
           </div>
         </div>
         <div class="form-group row">
@@ -75,13 +72,13 @@
           <label for="email" class="col-4 col-form-label">Email Address</label>
           <div class="col-8">
             <input id="email" name="email" placeholder="Email" type="text" class="form-control here" required="required">
-            <small class="form-text text-danger">Please remember the email and password you use, you will need it later to mark this job complete!</small>
+            <small class="form-text text-danger">Please remember the email and password used, you will need it later to mark this job complete!</small>
           </div>
         </div>        
         <div class="form-group row">
           <label for="password" class="col-4 col-form-label">Password</label>
           <div class="col-8">
-            <input id="password" name="password" placeholder="Enter a Password" type="text" class="form-control here" required="required">
+            <input id="password" name="password" placeholder="Enter a Password" type="password" class="form-control here" required="required">
           </div>
         </div>
         <div class="form-group row">
