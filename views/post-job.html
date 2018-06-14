@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Post Job</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="../public/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="nav navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home
+        <span class="sr-only">(current)</span>
+      </a>
+      <a class="nav-item nav-link" href="/findJob">Find a Job</a>
+      <a class="nav-item nav-link" href="/postJob">Post a Job</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1 class="display-3">Jobber</h1>
+      <p class="lead">Find work, get work done.</p>
+      <hr class="my-2">
+
+      <form class="postJob">
+        <div class="form-group row">
+          <label for="job-name" class="col-4 col-form-label">Job Name:</label>
+          <div class="col-8">
+            <input id="job-name" name="work-type" placeholder="Job Name" type="text" required="required" class="form-control here">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="work-type" class="col-4 col-form-label">Type of Work:</label>
+          <div class="col-8">
+            <select id="work-type" name="work-type" class="custom-select" required="required" size="1">
+              <option value="">Select a Type of Work</option>
+              <option value="Yard Work">Yard Work</option>
+              <option value="Household">Household</option>
+              <option value="Construction">Construction</option>
+              <option value="Computer">Computer</option>
+              <option value="Babysitting">Babysitting</option>             
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="location" class="col-4 col-form-label">Location</label>
+          <div class="col-8">
+            <input id="location" name="location" placeholder="Job Location" type="text" class="form-control here" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="description" class="col-4 col-form-label">Description</label>
+          <div class="col-8">
+            <textarea id="description" name="description" cols="40" rows="5" class="form-control"
+              required="required">Enter a description of the work to be done...</textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="name" class="col-4 col-form-label">Name</label>
+          <div class="col-8">
+            <input id="name" name="name" placeholder="Name" type="text" class="form-control here" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-4 col-form-label">Email Address</label>
+          <div class="col-8">
+            <input id="email" name="email" placeholder="Email" type="text" class="form-control here" required="required">
+            <small class="form-text text-danger">Please remember the email and password you use, you will need it later to mark this job complete!</small>
+          </div>
+        </div>        
+        <div class="form-group row">
+          <label for="password" class="col-4 col-form-label">Password</label>
+          <div class="col-8">
+            <input id="password" name="password" placeholder="Enter a Password" type="text" class="form-control here" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/post.js" type="text/javascript"></script>
+</body>
+
+</html>
