@@ -44,14 +44,11 @@ module.exports = function(sequelize,DataTypes) {
                 isIn:[['New','In Progress','Completed']]
             }
         },
-        worker: {
+        employeeEmail: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
-                len:{
-                    args:[1,80],
-                    msg: "The location needs to be greater than 1 character but shorter than 80 characters long"       
-                }
+                isEmail: true
             }
         }
     });

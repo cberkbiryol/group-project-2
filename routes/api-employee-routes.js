@@ -7,26 +7,25 @@ module.exports = function (app) {
         })
         .then(function (data) {
             var Uobj = {
-                employer: data
+                employee: data
             };
-            console.log("HERE IS DATA", JSON.stringify(Uobj, null, 2));
+            //console.log("HERE IS DATA\n", JSON.stringify(Uobj, null, 2));
             res.send(Jobj);
         });
     });
 
-    app.get("/api/employee/:email", function (req, res) {
+    app.get("/api/employee/:email", function (req, res) {        
         db.employee.findOne({
             where: {
-                email:req.params.id
-            },
-            include: [db.job],            
+                email:req.params.email
+            }          
         })
-        .then(function (data) {
+        .then(function (data) {            
             var Uobj = {
-                employer: data
+                employee: data
             };
-            console.log("HERE IS DATA", JSON.stringify(Uobj, null, 2));
-            res.send(Jobj);
+            //console.log("HERE IS DATA\n", JSON.stringify(Uobj, null, 2));
+            res.send(Uobj);
         });
     });
 
@@ -34,7 +33,7 @@ module.exports = function (app) {
         db.employee.create({
             name: req.body.name,
             email: req.body.email,
-            biography: req.body.password,
+            biography: req.body.biography,
         }).then(function (data) {
             res.json(data)
         }).catch(function (err) {

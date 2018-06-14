@@ -10,7 +10,7 @@ module.exports = function (app) {
                 var Jobj = {
                     job: data
                 };
-                console.log("HERE IS DATA", JSON.stringify(Jobj, null, 2));
+                //console.log("HERE IS DATA", JSON.stringify(Jobj, null, 2));
                 res.send(Jobj);
             });
     });
@@ -31,17 +31,17 @@ module.exports = function (app) {
     });
 
     app.put("/api/job/:id", function (req, res) {
-        var newdata = {
-            title: req.body.title,
-            description: req.body.description,
-            category: req.body.category,
-            location: req.body.location,
-            worker: req.body.worker,
-            jobStage: req.body.jobstage,
-            employerId: req.body.employerId
-        };       
+        // var newdata = {
+        //     title: req.body.title,
+        //     description: req.body.description,
+        //     category: req.body.category,
+        //     location: req.body.location,
+        //     worker: req.body.worker,
+        //     jobStage: req.body.jobstage,
+        //     employerId: req.body.employerId
+        // };       
 
-        db.job.update(newdata, {
+        db.job.update(req.body, {
             where: {
                 id: req.params.id
             }

@@ -31,7 +31,7 @@ $(function(){
             //console.log(result)
             if (result.employer !== null){    
                 // check if password correct
-                if (newEmployer.password !== result.password){
+                if (newEmployer.password !== result.employer.password){
                     alert("Password incorrect!");
                     return;
                 }

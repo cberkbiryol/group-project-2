@@ -10,7 +10,7 @@ module.exports = function (app) {
             var Uobj = {
                 employer: data
             };
-            console.log("HERE IS DATA", JSON.stringify(Uobj, null, 2));
+            //console.log("HERE IS DATA", JSON.stringify(Uobj, null, 2));
             res.send(Uobj);
         });
     });
@@ -26,7 +26,7 @@ module.exports = function (app) {
             var Uobj = {
                 employer: data
             };
-            console.log("HERE IS DATA", JSON.stringify(Uobj, null, 2));
+            //console.log("HERE IS DATA", JSON.stringify(Uobj, null, 2));
             res.send(Uobj);
         });
     });
