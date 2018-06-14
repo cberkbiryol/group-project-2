@@ -42,7 +42,7 @@ $(function(){
                 data: newJob
             }).then(function () {
                 //console.log("Changed itemID " + id + " to " + newStat)
-                location.reload();
+                location.assign("/");
             }); 
              // if employer is not in the database
             } else {                
@@ -59,7 +59,7 @@ $(function(){
                         data: newJob
                     }).then(function () {
                         //console.log("Changed itemID " + id + " to " + newStat)
-                        location.reload();
+                        location.assign("/");
                     })           
                 });
             } 
