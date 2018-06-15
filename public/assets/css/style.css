@@ -1,9 +1,8 @@
 body {
   font-family: 'Francois One', sans-serif;
+  background-color: #f5f5f5;
 }
 
-/* .jumbotron {
-  background-image: url(../img/yard-work.jpg);
-  background-size: cover;
-  height: 100%;
-} */
+nav {
+  background-color: rgb(45, 62, 72);
+}

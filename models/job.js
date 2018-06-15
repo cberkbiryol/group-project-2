@@ -6,7 +6,7 @@ module.exports = function(sequelize,DataTypes) {
             validate: {
                 len:{
                     args:[1,100],
-                    msg: "The title needs to be greater than 1 character but shorter than 100 characters long"            
+                    msg: "The title needs to be greater than 1 character but shorter than 100 characters long"
                 }
             }
         },
@@ -16,7 +16,7 @@ module.exports = function(sequelize,DataTypes) {
             validate: {
                 len:{
                     args:[1,250],
-                    msg: "The description needs to be greater than 1 character but shorter than 250 characters long"            
+                    msg: "The description needs to be greater than 1 character but shorter than 250 characters long"
                 }
             }
         },
