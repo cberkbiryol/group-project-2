@@ -38,7 +38,7 @@ $(function() {
                             <h4 class="card-title">${e.title}</h4>
                             <p class="card-text">Category: ${e.category}</p>
                             <p class="card-text">Location: ${e.location}</p>
-                            <p class="card-text"><b>${e.description}</b></p>
+                            <p class="card-text">${e.description}</p>
                         </div>
                     </div>
                 `)
