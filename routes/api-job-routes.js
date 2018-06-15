@@ -15,6 +15,23 @@ module.exports = function (app) {
             });
     });
 
+    app.get("/api/job/:category", function (req, res) {
+        db.job.findAll({
+            include: [db.employer],
+            where:{
+                category: req.params.category
+            },
+            order: [['createdAt', 'ASC']]
+        })
+            .then(function (data) {
+                var Jobj = {
+                    job: data
+                };
+                //console.log("HERE IS DATA by CATEGORY", JSON.stringify(Jobj, null, 2));
+                res.send(Jobj);
+            });
+    });
+
 
     app.post("/api/job", function (req, res) {
         db.job.create({
@@ -30,17 +47,7 @@ module.exports = function (app) {
         });
     });
 
-    app.put("/api/job/:id", function (req, res) {
-        // var newdata = {
-        //     title: req.body.title,
-        //     description: req.body.description,
-        //     category: req.body.category,
-        //     location: req.body.location,
-        //     worker: req.body.worker,
-        //     jobStage: req.body.jobstage,
-        //     employerId: req.body.employerId
-        // };       
-
+    app.put("/api/job/:id", function (req, res) {     
         db.job.update(req.body, {
             where: {
                 id: req.params.id
