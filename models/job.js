@@ -50,6 +50,16 @@ module.exports = function(sequelize,DataTypes) {
             validate: {
                 isEmail: true
             }
+        },
+        rating: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            validate: {
+                len:{
+                    args:[1],
+                    msg: "The rating needs to be of length 1"            
+                }
+            }
         }
     });
     job.associate = function(models){

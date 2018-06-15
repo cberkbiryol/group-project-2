@@ -1,6 +1,8 @@
 $(function () {
     loadPage();
 });
+
+/// INITIAL LOAD AND CATAGORIZED LOAD
 var loadPage = function (category) {
     if (!category) {
         var route = "/api/job";
@@ -42,13 +44,24 @@ var loadPage = function (category) {
                 </div>
               `)
                 } else {
-                    $("#completed").append(`
+                    var stars="<span>";
+                     for (i=1; i<=e.rating; i++) {
+                         stars+="<i class='material-icons'>grade</i>"
+                     };  
+                     stars+="</span>";                                        
+                $("#completed").append(`
                 <div class="card">
-                    <div class="card-header bg-dark text-white">Completed Jobs</div>
+                    <div class="card-header bg-dark text-white">
+                        Completed Jobs
+                        <button type="button" class="close deleteJob" data-jid=${e.id}>
+                            <span style="color: red; font-size: 1.5rem; font-family: Times; opacity: 1">&times;</span>
+                        </button>
+                    </div>
                         <div class="card-body">
                             <h4 class="card-title">${e.title}</h4>
                             <p class="card-text">Category: ${e.category}</p>
                             <p class="card-text">Location: ${e.location}</p>
+                            <p class="card-text">Rating:${stars}</p>
                             <p class="card-text"><b>${e.description}</b></p>
                         </div>
                     </div>
@@ -60,12 +73,22 @@ var loadPage = function (category) {
                     var eid = $(this).data('eid');
                     $(href).data('jid', jid);
                     $(href).data('eid', eid);
+                });                
+            })
+            // COMPLETED JOB DELETION
+            $(".deleteJob").on("click",function(){
+                var thisJobId = $(this).data("jid");
+                $.ajax("/api/job/"+thisJobId,{
+                    type:"DELETE"
+                }).then (function(){
+                    //console.log("Deleted Job ID " + thisJobId)
+                    location.reload();
                 })
             })
         });
 }
 
-
+/// JOB ACCEPTANCE CONTROL
 $(".accept").on("submit", function (event) {
     event.preventDefault();
     var thisEmail = $("#employeeEmail").val().trim();
@@ -130,20 +153,21 @@ $(".complete").on("submit", function (event) {
     event.preventDefault();
     var thisEmail = $("#managerEmail").val().trim();
     var thisPassword = $("#managerPassword").val().trim();
-    var thisCheck = $("#completeJob").val();
+    var thisRating= Number($("#employee-rating").val());
     var thisJobId = $("#completeModal").data("jid");
     var thisEmployerId = $("#completeModal").data("eid");
     var thisEmployeeId;
-    console.log(thisEmail, thisPassword, thisCheck, thisJobId, thisEmployerId)
+    //console.log(thisEmail, thisPassword,thisRating,thisJobId, thisEmployerId)
     var updatedJob = {
         jobStage: "Completed",
+        rating: thisRating
     }
 
     // check if the employer who initiated the job is marking it complete
     $.get("/api/employer/" + thisEmail)
         .then(function (result) {
             // if already in database
-            console.log(result.employer)
+            //console.log(result.employer)
             if (result.employer.id === thisEmployerId) {
                 // check if password correct
                 if (thisPassword.toString() !== result.employer.password) {
@@ -163,11 +187,11 @@ $(".complete").on("submit", function (event) {
             }
         })
 })
+
 /// JOB CATEGORY SEARCH
 $(".findCat").on("submit", function (event) {
     event.preventDefault();
     var category = $("#work-type").val();
     loadPage(category);
 })
-
 
