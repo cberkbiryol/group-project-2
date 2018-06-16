@@ -19,3 +19,8 @@ nav {
 .jumbotron {
   background-color: rgba(253, 253, 133,0.5)
 }
+
+.micon {
+  color: rgb(207, 124, 0);
+  font-size: 3.5rem;
+}
