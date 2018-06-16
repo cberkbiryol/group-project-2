@@ -28,5 +28,10 @@ module.exports = function(sequelize,DataTypes) {
             }
         }        
     });
+    employee.associate = function(models){
+        employee.hasMany(models.job,{
+            onDelete: "cascade"
+        })
+    };
     return employee;
 };

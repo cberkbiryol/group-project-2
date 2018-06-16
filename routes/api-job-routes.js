@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function (app) {
     app.get("/api/job", function (req, res) {
         db.job.findAll({
-            include: [db.employer],
+            include: [db.employer,db.employee],
             order: [['createdAt', 'ASC']]
         })
             .then(function (data) {
@@ -17,9 +17,26 @@ module.exports = function (app) {
 
     app.get("/api/job/:category", function (req, res) {
         db.job.findAll({
-            include: [db.employer],
+            include: [db.employer,db.employee],
             where:{
                 category: req.params.category
+            },
+            order: [['createdAt', 'ASC']]
+        })
+            .then(function (data) {
+                var Jobj = {
+                    job: data
+                };
+                //console.log("HERE IS DATA by CATEGORY", JSON.stringify(Jobj, null, 2));
+                res.send(Jobj);
+            });
+    });
+
+    app.get("/api/jobEmp/:id", function (req, res) {
+        db.job.findAll({
+            include: [db.employer,db.employee],
+            where:{
+                employeeId: req.params.id
             },
             order: [['createdAt', 'ASC']]
         })

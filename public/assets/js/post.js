@@ -36,7 +36,7 @@ $(function(){
                     return;
                 }
                 //add job to job table              
-                newJob.employerId=result.id;                                 
+                newJob.employerId=result.employer.id;                                 
             $.ajax("/api/job/",{
                 type: "POST",
                 data: newJob

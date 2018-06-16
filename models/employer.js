@@ -25,7 +25,7 @@ module.exports = function(sequelize,DataTypes) {
     employer.associate = function(models){
         employer.hasMany(models.job,{
             onDelete: "cascade"
-        })
+        });     
     }
     return employer;
 };

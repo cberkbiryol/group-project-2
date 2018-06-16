@@ -10,6 +10,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
   </head>
 
   <body>
@@ -161,22 +165,28 @@
   <!-- EMPLOYEE INFO MODAL -->
   <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
+      <div class="modal-content bg-info text-white">
         <div class="modal-header">
           <h5 class="modal-title">Employee Info</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true" style="color: yellow; font-size: 1.5rem; font-family: Times; opacity: 1">
+              &times;
+            </span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="card">
+          <div class="card bg-dark">
               <div class="card-body">
-                <h4 class="card-title">Employee Info</h4>
-                <p class="card-text">Employee Name: </p>
-                <p class="card-text">Employee Email: </p>
-                <p class="card-text">Employee Skills: </p>
+                <h4 class="card-title" id="empInfoTitle"></h4>                
+                <p class="card-text" id="empInfoEmail"></p>
+                <p class="card-text" id="empInfoNote"></p>
+                <p class="card-text" id="empInfoRate"></p>
+                <!-- <div id="chart1" style="width:400px; height:400px"> -->
+                <canvas id="chart1" width:"400" height="100"></canvas>
+                <canvas id="chart2" width:"400" height="100"></canvas>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
