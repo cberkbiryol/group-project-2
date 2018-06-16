@@ -50,27 +50,27 @@ var loadPage = function (category) {
               `)
                 } else {
                     thisStars = stars(e.rating,5)                                    
-                $("#completed").append(`
-                <div class="card card1  border border-dark">
-                    <div class="card-header bg-dark text-white">
-                        ${e.title}
-                        <button type="button" class="close deleteJob" data-jid=${e.id}>
-                            <span style="color: yellow; font-size: 1.5rem; font-family: Times; opacity: 1">&times;</span>
-                        </button>
-                    </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Completed by:
-                                 <a class="btn btn-outline-dark btn-large modalBtn infoBtn" data-toggle="modal" data-target="#employeeModal" data-jid='${e.id}' data-eid='${e.employeeId}'> 
-                                    ${e.employee.name}
-                                 </a>
-                            </h4>
-                            <p class="card-text text-muted">Category: ${e.category}</p>
-                            <p class="card-text">Posted by: ${e.employer.name}</p>                            
-                            <p class="card-text">Rating:${thisStars}</p>
-                            <p class="card-text"><b>${e.description}</b></p>
+                    $("#completed").append(`
+                    <div class="card card1  border border-dark">
+                        <div class="card-header bg-dark text-white">
+                            ${e.title}
+                            <button type="button" class="close deleteJob" data-jid=${e.id}>
+                                <span style="color: yellow; font-size: 1.5rem; font-family: Times; opacity: 1">&times;</span>
+                            </button>
                         </div>
-                    </div>
-                `)
+                            <div class="card-body">
+                                <h4 class="card-title">Completed by:
+                                    <a class="btn btn-outline-dark btn-large modalBtn infoBtn" data-toggle="modal" data-target="#employeeModal" data-jid='${e.id}' data-eid='${e.employeeId}'> 
+                                        ${e.employee.name}
+                                    </a>
+                                </h4>
+                                <p class="card-text text-muted">Category: ${e.category}</p>
+                                <p class="card-text">Posted by: ${e.employer.name}</p>                            
+                                <p class="card-text">Rating:${thisStars}</p>
+                                <p class="card-text"><b>${e.description}</b></p>
+                            </div>
+                        </div>
+                    `)
                 }
                 $(".modalBtn").click(function () {
                     var href = $(this).data('target');
@@ -78,8 +78,8 @@ var loadPage = function (category) {
                     var eid = $(this).data('eid');
                     $(href).data('jid', jid);
                     $(href).data('eid', eid);
-                });                
-            })            
+                });
+            });
             // COMPLETED JOB DELETION
             $(".deleteJob").on("click",function(){
                 var thisJobId = $(this).data("jid");
@@ -104,7 +104,7 @@ var loadPage = function (category) {
                     var dates=[];
                     ratCounts=[];
                     // get dates of completion and ratings into arrays
-                    result.job.forEach(e=> {if (e.rating!==null) {ratings.push(e.rating);dates.push(e.updatedAt)}})
+                    result.job.forEach(e=> {if (e.rating!==null) {ratings.push(e.rating);dates.push(e.updatedAt)}});
                     // calculate average rating
                     var avRate= ratings.reduce((sum,e)=>{return sum + e},0)/ratings.length;
                     // tally the ratings 

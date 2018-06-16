@@ -1,6 +1,6 @@
 var express = require("express");
-var bodyParser = require("body-parser")
-var db = require("./models")
+var bodyParser = require("body-parser");
+var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 8080;
@@ -20,6 +20,6 @@ require("./routes/html-routes.js")(app);
 //db.sequelize.sync({force:true}).then(function(){
 db.sequelize.sync({}).then(function(){
     app.listen(PORT,function(){
-        console.log("Server listening on: http://localhost:" + PORT)
-    });        
+        console.log("Server listening on: http://localhost:" + PORT);
+    });
 })
