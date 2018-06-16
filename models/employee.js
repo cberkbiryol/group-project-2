@@ -26,17 +26,12 @@ module.exports = function(sequelize,DataTypes) {
                     msg: "The email needs to be greater than 1 character but shorter than 80 characters long"            
                 }
             }
-        },
-        rating: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len:{
-                    args:[1,80],
-                    msg: "The email needs to be greater than 1 character but shorter than 80 characters long"            
-                }
-            }
-        }
+        }        
     });
+    employee.associate = function(models){
+        employee.hasMany(models.job,{
+            onDelete: "cascade"
+        })
+    };
     return employee;
 };

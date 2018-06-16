@@ -20,13 +20,12 @@ module.exports = function(sequelize,DataTypes) {
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-
         }
     });
     employer.associate = function(models){
         employer.hasMany(models.job,{
             onDelete: "cascade"
-        })
+        });     
     }
     return employer;
 };

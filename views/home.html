@@ -5,16 +5,20 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Comfortaa|Material+Icons" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
   </head>
 
   <body>
     
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <nav class="navbar navbar-expand navbar-dark">
       <div class="nav navbar-nav">
         <a class="nav-item nav-link" href="/">Home<span class="sr-only">(current)</span></a>        
         <a class="nav-item nav-link" href="/postJob">Post a Job</a>
@@ -24,10 +28,15 @@
     <!-- JUMBOTRON/FORM -->
     <div class="container">
       <div class="jumbotron">
-        <h1 class="display-3">Jobber</h1>
+        <h1 class="display-3">
+            <i class="material-icons micon" >
+                rate_review
+              </i>
+              Jobber
+        </h1>
         <p class="lead">Find work, get work done.</p>
         <hr class="my-2">
-      <form>
+      <form class="findCat">
         <div class="form-group row">
           <label for="work-type" class="col-4 col-form-label">Type of Work Desired:</label> 
           <div class="col-8">
@@ -50,38 +59,54 @@
     </div>
 
     <!-- SECTION DIVIDER -->
-    <!-- *************** -->
-    <div class="row">
+    <!-- <div class="row">
         <div class="col"><hr></div>
         <div class="col-auto"><h2>Available Jobs</h2></div>
         <div class="col"><hr></div>
+    </div> -->
+    <div class="row">
+        <div class="col"><hr></div>
+        <div class="col-auto">
+          <a class="btn btn-outline-light btn-large border-0"  data-toggle="collapse" data-target="#open-jobs">
+            <h2>Available Jobs</h2>
+          </a>
+        </div>
+        <div class="col"><hr></div>
     </div>
 
+    <!-- ********* -->
     <!-- OPEN JOBS -->
+    <!-- ********* -->
     <div class="card-columns" id="open-jobs">
     </div>
 
     <!-- SECTION DIVIDER -->
-    <!-- *************** -->
     <div class="row">
         <div class="col"><hr></div>
-        <div class="col-auto"><h2>Jobs In Progress</h2></div>
+        <div class="col-auto">
+          <a class="btn btn-outline-light btn-large border-0"  data-toggle="collapse" data-target="#in-progress">
+            <h2>Jobs In Progress</h2>
+          </a>
+        </div>
         <div class="col"><hr></div>
     </div>
 
-  <!-- IN PROGRESS JOBS -->
+    <!-- **************** -->
+    <!-- IN PROGRESS JOBS -->
+    <!-- **************** -->
     <div class="card-columns" id="in-progress">
     </div>
 
     <!-- SECTION DIVIDER -->
-    <!-- *************** -->
     <div class="row">
         <div class="col"><hr></div>
         <div class="col-auto"><h2>Completed Jobs</h2></div>
         <div class="col"><hr></div>
     </div>
 
+    <!-- ************** -->
     <!-- COMPLETED JOBS -->
+    <!-- ************** -->
       <div class="card-columns" id="completed">
       </div>
 
@@ -150,6 +175,36 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMPLOYEE INFO MODAL -->
+  <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content bg-info text-white">
+        <div class="modal-header">
+          <h5 class="modal-title">Employee Info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="color: yellow; font-size: 1.5rem; font-family: Times; opacity: 1">
+              &times;
+            </span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card bg-dark">
+              <div class="card-body">
+                <h4 class="card-title" id="empInfoTitle"></h4>                
+                <p class="card-text" id="empInfoEmail"></p>
+                <p class="card-text" id="empInfoNote"></p>
+                <p class="card-text" id="empInfoRate"></p>
+                <!-- <div id="chart1" style="width:400px; height:400px"> -->
+                <canvas id="chart1" width:"400" height="100"></canvas>
+                <canvas id="chart2" width:"400" height="100"></canvas>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

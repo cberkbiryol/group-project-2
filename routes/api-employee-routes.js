@@ -43,7 +43,7 @@ module.exports = function (app) {
     
     app.put("/api/employee/:id", function (req, res) {
         var newdata={
-            rating: req.body.rating
+            biography: req.body.biography
         }
         db.employee.update(newdata,{
             where: {

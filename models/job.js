@@ -44,11 +44,14 @@ module.exports = function(sequelize,DataTypes) {
                 isIn:[['New','In Progress','Completed']]
             }
         },
-        employeeEmail: {
-            type: DataTypes.STRING,
+        rating: {
+            type: DataTypes.INTEGER,
             allowNull: true,
             validate: {
-                isEmail: true
+                len:{
+                    args:[1],
+                    msg: "The rating needs to be of length 1"            
+                }
             }
         }
     });
@@ -57,7 +60,12 @@ module.exports = function(sequelize,DataTypes) {
             foreignKey: {
                 allowNull:false
             }
-        })
+        });
+        job.belongsTo(models.employee,{
+            foreignKey: {
+                allowNull:true
+            }
+        });
     };
     return job;
 };

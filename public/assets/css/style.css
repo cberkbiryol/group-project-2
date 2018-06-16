@@ -1,4 +1,26 @@
 body {
   font-family: 'Francois One', sans-serif;
-  background-color: rgb(245,245,245);
+  background-color: rgba(245,245,245,0.6);
+  background-image: url("https://s3.envato.com/files/140061.jpg");
+  background-size: 35rem;
+  background-repeat:repeat;
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+}
+
+nav {
+  background-color: rgb(45,62,73)
+}
+ 
+.card1 {
+  background-color: rgba(253, 253, 133,.70) 
+}
+
+.jumbotron {
+  background-color: rgba(253, 253, 133,0.5)
+}
+
+.micon {
+  color: rgb(207, 124, 0);
+  font-size: 3.5rem;
 }
