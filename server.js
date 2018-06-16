@@ -17,8 +17,8 @@ require("./routes/api-employee-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
 // Start Server
-db.sequelize.sync({force:true}).then(function(){
-//db.sequelize.sync({}).then(function(){
+//db.sequelize.sync({force:true}).then(function(){
+db.sequelize.sync({}).then(function(){
     app.listen(PORT,function(){
         console.log("Server listening on: http://localhost:" + PORT)
     });        
