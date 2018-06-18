@@ -23,9 +23,8 @@ When a poster chooses to "Mark Complete", they are prompted to enter their email
 * Bootstrap
 * Node.js
 * Express.js
-* Chart.js
+* Chart.js / Canvas
 * Moment.js
-* Canvas
 * MySQL / Sequelize
 
 ## Contributors
