@@ -9,4 +9,5 @@ module.exports = function (app) {
     app.get("/postJob", function (req, res) {
         res.sendFile(path.join(__dirname, "../views/post-job.html"));
     });
+
 }

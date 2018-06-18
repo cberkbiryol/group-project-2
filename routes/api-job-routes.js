@@ -49,7 +49,6 @@ module.exports = function (app) {
       });
   });
 
-
   app.post("/api/job", function (req, res) {
     db.job.create({
       title: req.body.title,

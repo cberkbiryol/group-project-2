@@ -51,7 +51,7 @@ module.exports = function (app) {
             }
         }).then(function (data) {
             if (data.changedRows == 0) {
-                // If no rows were changed, then the ID must not exist, so 404
+                // If no rows were changed, then the ID must not exist, so throw 404
                 return res.status(404).end();
             } else {
                 res.status(200).end();
