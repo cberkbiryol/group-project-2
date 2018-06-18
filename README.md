@@ -29,9 +29,9 @@ When a poster chooses to "Mark Complete", they are prompted to enter their email
 * MySQL / Sequelize
 
 ## Contributors
-Berk Biryol
-Henry Kirse
-Ned Nimocks
+* Berk Biryol
+* Henry Kirse
+* Ned Nimocks
 
 ## Screenshots
 
