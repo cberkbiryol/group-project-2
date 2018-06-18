@@ -46,12 +46,3 @@ Ned Nimocks
 
 ### Chart Modal:
 ![Chart Modal](./public/assets/img/chart.png)
-
-### Mobile Responsive Post Page:
-![Mobile Responsive Post Page](./public/assets/img/mobile-post.png)
-
-### Mobile Responsive Home Page:
-![Mobile Responsive Home Page](./public/assets/img/mobile-home.png)
-
-### Mobile Responsive Chart Modal:
-![Mobile Responsive Chart Modal](./public/assets/img/mobile-chart.png)
