@@ -1,47 +1,57 @@
-# group-project-2
+# Jobber
 
-## Project Requirements
+Jobber is a bulletin board-like application that allows users to either: post work requests, or find and accept work requests that other community members have posted. 
 
-Here are the base requirements for Project 2.
+It is a full-stack application and follows MVC architecture. Express.js is used for server routing and a MySQL database stores user input in three different tables.
 
-### Requirements
+## View the Project
+You can view the project, hosted by Heroku, here: [https://shrouded-garden-83490.herokuapp.com/](https://shrouded-garden-83490.herokuapp.com/)
 
-Your project must:
+## Instructions for Use
+The homepage is where you find jobs that have been posted, and are in varying degrees of completeness. The "Post a Job" page is where users who want to post a request for work can do so. The email and password that you enter here when posting a job are required later when you mark the job complete. 
 
-* Use a Node and Express Web Server;
+After posting a job, you can go to the homepage to see that job in the "Available Jobs" category. 
+* When with the skills to undertake that job wants it, the simply click "Accept Job" and enter their name email and skills. 
+* The page is also filterable by job *Category*, by using the dropdown at the top. 
+* Jobs "In Progress" have options for users to click and learn about the ratings of workers who have taken on the jobs, so that their performance can be evaulated by the community over time.
+* This is also where job posters can mark jobs complete once finished.
 
-* Be backed by a MySQL Database an ORM (not necessarily Sequelize);
+When a poster chooses to "Mark Complete", they are prompted to enter their email and password -- to verify that they are the one who posted the job -- and they are also promted to leave a 1-5 rating on the quality of the work done. This rating is then shown under "Completed Jobs", and more aggregated information on workers can be viewed here by clicking on the worker's name. 
 
-* Have both GET and POST routes for retrieving and adding new data;
+## Technologies Used
+* Javascript / HTML / CSS
+* Bootstrap
+* Node.js
+* Express.js
+* Chart.js
+* Moment.js
+* Canvas
+* MySQL / Sequelize
 
-* Be deployed using Heroku (with Data);
+## Contributors
+Berk Biryol
+Henry Kirse
+Ned Nimocks
 
-* Utilize at least one new library, package, or technology that we haven’t discussed;
+## Screenshots
 
-* Have a polished frontend / UI;
+### Top of Home:
+![Top of Home](./public/assets/img/home-1.png)
 
-* Have folder structure that meets MVC Paradigm;
+### Bottom of Home:
+![Bottom of Home](./public/assets/img/home-2.png)
 
-* Meet good quality coding standards (indentation, scoping, naming).
+### Post Job page:
+![Post Job page](./public/assets/img/post.png)
 
-* Must not expose sensitive API key information on the server, see [Protecting-API-Keys-In-Node.md](../../../10-nodejs/03-Supplemental/Protecting-API-Keys-In-Node.md)
+### Chart Modal:
+![Chart Modal](./public/assets/img/chart.png)
 
-# Project Suggestions
+### Mobile Responsive Post Page:
+![Mobile Responsive Post Page](./public/assets/img/mobile-post.png)
 
-Since projects are being worked on this week, you won't have a homework assignment, but a project is a perfect context in which to practice writing tests!
+### Mobile Responsive Home Page:
+![Mobile Responsive Home Page](./public/assets/img/mobile-home.png)
 
-Incorporate a few of the below suggestions into your project. You'll write better code, and it will help you consolidate your testing habits.
-
-- - -
-
-### Testing Suggestions
-
-* Set up Karma so you can run your tests as you develop.
-
-* Prior to implementing a feature, use Nightmare to write a functional test for it.
-
-* Prior to implementing a function, use Mocha and Chai to write unit tests against it.
-
-* Run your tests prior to committing your code so you can be sure nothing breaks between commits.
-
-* **Non-Obligatory Bonus**: If you're confident and feel like you have some time to tinker, set up [Travis CI](https://travis-ci.org/). This will automatically run your tests whenever you or any of your team members makes a commit.
+### Mobile Responsive Chart Modal:
+![Mobile Responsive Chart Modal](./public/assets/img/mobile-chart.png)
